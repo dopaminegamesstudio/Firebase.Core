@@ -1,7 +1,7 @@
 {
   "name": "com.dopamine.firebase.core",
   "displayName": "Firebase Core",
-  "version": "7.0.2",
+  "version": "7.1.2",
   "unity": "2020.2",
   "description": "Core Modules of Firebase SDK for Unity",
   "author": {
