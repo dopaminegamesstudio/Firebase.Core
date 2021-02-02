@@ -1,19 +1,16 @@
-name: CI
+name: Publish UPM Package
+
 on:
-  push:
-    branches:
-    - master
+  release:
+    types: [published]
+
 jobs:
-  split-upm:
-    name: split upm branch
+  publish:
+
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v2
+    - uses: monry/actions-upm-publish@v1
       with:
-        fetch-depth: 0
-    - name: split upm branch
-      run: |
-        git subtree split -P "$PKG_ROOT" -b upm
-        git push -u origin upm
-      env:
-        PKG_ROOT: Packages/package-name
+        npm_auth_token: ${{ secrets.NPM_AUTH_TOKEN }}
